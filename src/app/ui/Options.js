@@ -27,7 +27,9 @@ export default React.memo(function Options({
     handleBackButtonStringChange,
     handleNavbarHeightChange,
     handleBackButtonOnFirstViewString,
-    handleBackButtonOnFirstViewStringChange
+    handleBackButtonOnFirstViewStringChange,
+    navbarMenu,
+    handleNavbarMenuChange
 }) {
     return (
         <div className="options">
@@ -105,6 +107,13 @@ export default React.memo(function Options({
                     <option value="">none</option>
                     <option value="grey-bg">grey-bg</option>
                     <option value="yellow-bg">yellow-bg</option>
+                </select>
+            </div>
+            <div>
+                navbarMenu:{" "}
+                <select value={navbarMenu || ""} onChange={handleNavbarMenuChange}>
+                    <option value="">none</option>
+                    <option value="toggleSidepanel">toggle sidepanel</option>
                 </select>
             </div>
             <div>

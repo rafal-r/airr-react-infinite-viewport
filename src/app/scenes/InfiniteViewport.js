@@ -1,5 +1,5 @@
 import React from "react";
-import { Scene } from "airr-react";
+import { Scene, Sidepanel } from "airr-react";
 import HelloWorld, {
     viewName as HelloWorldViewName
 } from "../views/HelloWorld";
@@ -25,6 +25,7 @@ export default class InfiniteViewport extends Scene {
             children: this.renderTabsMenu,
             handleBackButton: this.backButtonHandler,
             handleBackBehaviourOnFirstView: this.backBehaviourOnFirstView,
+            navbarMenu: null,
             //Custom state
             showOptions: false,
             handleBackButtonString: "go back",
@@ -84,6 +85,27 @@ export default class InfiniteViewport extends Scene {
 
     handleNavbarClassChange = e => {
         this.setState({ navbarClass: e.currentTarget.value });
+    };
+
+    handleNavbarMenuChange = e => {
+        const hasVal = e.currentTarget.value;
+        if (hasVal) {
+            this.setState({
+                navbarMenu: "toggleSidepanel"
+            });
+            this.setSidepanelConfig({
+                type: Sidepanel,
+                props: {
+                    side: "left",
+                    children: <div style={{padding: "2rem"}}>side panel content</div>
+                }
+            });
+        } else {
+            this.setState({
+                navbarMenu: null,
+                sidepanel: null
+            });
+        }
     };
 
     toggleBackButton = () => {
@@ -226,6 +248,8 @@ export default class InfiniteViewport extends Scene {
                         stackMode={this.state.stackMode}
                         navbar={this.state.navbar}
                         handleNavbarChange={this.handleNavbarChange}
+                        navbarMenu={this.state.navbarMenu}
+                        handleNavbarMenuChange={this.handleNavbarMenuChange}
                         navbarHeight={this.state.navbarHeight}
                         handleNavbarHeightChange={this.handleNavbarHeightChange}
                         navbarClass={this.state.navbarClass}

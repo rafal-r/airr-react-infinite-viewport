@@ -46,17 +46,9 @@
     align-items: center;
     justify-content: center;
 }
-.airr-navbar .back div {
-    background: url(../img/back.svg) no-repeat center center;
-    background-size: 50% auto;
-}
 .airr-navbar .menu {
     width: auto;
     padding: 4px;
-}
-.airr-navbar .menu div {
-    background: url(../img/menu.svg) no-repeat center center;
-    background-size: 50% auto;
 }
 .airr-blank-mask {
     text-align: center;
