@@ -1,5 +1,5 @@
 import React from "react";
-import { ViewWrapper } from "airr-react";
+import { View } from "airr-react";
 import "../../css/CommonView.css";
 
 export const viewNameTpl = "common-view-*";
@@ -23,7 +23,7 @@ export const countCommonViews = views => {
     }, 0);
 };
 
-export default class CommonView extends ViewWrapper {
+export default class CommonView extends View {
     content() {
         const content =
             typeof this.props.render === "function"

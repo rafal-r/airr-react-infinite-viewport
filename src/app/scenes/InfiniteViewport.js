@@ -1,5 +1,5 @@
 import React from "react";
-import { SceneWrapper } from "airr-react";
+import { Scene } from "airr-react";
 import HelloWorld, {
     viewName as HelloWorldViewName
 } from "../views/HelloWorld";
@@ -11,12 +11,12 @@ import "../../css/InfiniteViewport.css";
 import { colors } from "./colors";
 import Options from "../ui/Options";
 
-export default class InfiniteViewport extends SceneWrapper {
+export default class InfiniteViewport extends Scene {
     constructor(props) {
         super(props);
 
         this.state = {
-            //SceneWrapper state
+            //Scene state
             ...this.state,
             navbar: 1,
             backButton: true,
