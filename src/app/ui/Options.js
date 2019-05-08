@@ -82,6 +82,7 @@ export default React.memo(function Options({
                     onChange={toggleStackMode}
                     checked={stackMode}
                 />
+                (takes effect only when 'overlay' animation set)
             </div>
             <div>
                 navbar:{" "}
