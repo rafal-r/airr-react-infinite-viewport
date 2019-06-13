@@ -97,7 +97,11 @@ export default class InfiniteViewport extends Scene {
                 type: Sidepanel,
                 props: {
                     side: "left",
-                    children: <div style={{padding: "2rem"}}>side panel content</div>
+                    children: (
+                        <div style={{ padding: "2rem" }}>
+                            side panel content
+                        </div>
+                    )
                 }
             });
         } else {
@@ -266,8 +270,8 @@ export default class InfiniteViewport extends Scene {
                         handleBackButtonStringChange={
                             this.handleBackButtonStringChange
                         }
-                        handleBackBehaviourOnFirstViewString={
-                            this.state.handleBackBehaviourOnFirstViewString
+                        handleBackButtonOnFirstViewString={
+                            this.state.handleBackButtonOnFirstViewString
                         }
                         handleBackButtonOnFirstViewStringChange={
                             this.handleBackButtonOnFirstViewStringChange
